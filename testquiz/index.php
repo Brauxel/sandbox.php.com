@@ -1,13 +1,9 @@
-<!-- require Models -->
-<?php require_once 'models/Quiz.php'; ?>
-
 <!-- require Controllers -->
 <?php require_once 'contollers/QuizController.php'; ?>
 
 <?php
     $quiz1 = new QuizController;
 
-    $entry1 = $_POST['entry1'] ?? 'Lorem Ipsum';
 ?>
 
 
@@ -43,10 +39,10 @@
                 <li>
                     <p>Write a function that determines if a string starts with an upper-case letter A-Z</p>
                     <form action="" method="post">
-                        <input type="text" name="entry1" id="entry1" placeholder="<?php echo $entry1; ?>"><br><br>
+                        <input type="text" name="entry1" id="entry1" placeholder="<?php echo $_POST['entry1'] ?? 'Lorem Ipsum'; ?>"><br><br>
                         <button type="submit">Check</button>
                     </form>
-                    <p><?php echo $quiz1->query1($entry1); ?></p>
+                    <p><?php echo $quiz1->query1($_POST['entry1'] ?? 'Lorem Ipsum'); ?></p>
                 </li>
             </ol>
             <p></p>
