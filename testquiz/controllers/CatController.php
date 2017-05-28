@@ -33,7 +33,7 @@ class CatController extends Cat
 			echo 'Can I have some lasagna now?';
 			ob_implicit_flush(false);			
 		} else {
-			echo 'The Start Delay can be 0 but a delay value needs to be entered';
+			echo 'Press "Run Purr" to run the function';
 		}
 	}
 }
