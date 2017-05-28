@@ -71,6 +71,17 @@ class QuizController extends Quiz
 			echo 'Iteration '. $i .'<br>';
 		} while ( $i < 32);
 	}
+
+	public function alphaNumericExplode(string $query) {
+		preg_match_all('/\d+/', $query, $numbers);
+		preg_match_all('/[^\d]+/', $query, $words);
+
+		print_r($words);
+		echo '<br>';
+		print_r($numbers);
+
+		return;
+	}
 }
 
 ?>

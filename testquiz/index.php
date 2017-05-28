@@ -85,7 +85,12 @@
 
                 <li>
                     <p>Provide examples for the different loops in native PHP, write tests in which the code block executes exactly 32 times</p>
-                    <?php $quiz1->loopTests(); ?>
+                    <p><?php $quiz1->loopTests(); ?></p>
+                </li>
+
+                <li>
+                    <p>Given the following input: 'One day 10 questions: 2 on each day, for 5 weeks.'<br>Write simple logic in PHP code that can extract both the words and numbers and put them into their own arrays, '$words', '$numbers'.</p>
+                    <p><?php $explosive = $quiz1->alphaNumericExplode('One day 10 questions: 2 on each day, for 5 weeks.'); ?></p>
                 </li>
             </ol>
         </main>
