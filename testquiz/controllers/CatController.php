@@ -30,7 +30,8 @@ class CatController extends Cat
 				echo "Purr!<br>";
 				sleep($delay);
 			}
-			echo 'Can I have some lasagna now?';			
+			echo 'Can I have some lasagna now?';
+			ob_implicit_flush(false);			
 		} else {
 			echo 'The Start Delay can be 0 but a delay value needs to be entered';
 		}
