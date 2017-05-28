@@ -74,6 +74,13 @@
 
                 <li>
                     <p>Create a function called "purr()" in the "Cat" class (above) and Echo 'purr' every x seconds with a specified delay to start purring</p>
+                    <form action="" method="post">
+                        <input type="number" name="startdelay" id="startdelay" value="<?php echo $_POST['startdelay'] ?? 0; ?>" min="0"><br><br>
+                        <input type="number" name="delay" id="delay" value="<?php echo $_POST['delay'] ?? 0; ?>" required min="0"><br><br>
+                        <input type="number" name="purrcount" id="purrcount" value="<?php echo $_POST['purrcount'] ?? 1; ?>" required min="1"><br><br>                        
+                        <button type="submit">Run Purr</button>
+                    </form>
+                    <p><?php $sprinkles->purr($_POST['startdelay'] ?? 0, $_POST['delay'] ?? 0, $_POST['purrcount'] ?? 1); ?></p>
                 </li>
             </ol>
         </main>
