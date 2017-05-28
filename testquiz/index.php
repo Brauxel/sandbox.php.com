@@ -116,6 +116,16 @@
                         ?>
                     </p>
                 </li>
+
+                <li>
+                    <p>Write a function to 'best match' players based on how close their names are.<br>M. Sharapova is also known as Sharapova<br>N. Djøvick is also known as Djovick<br>V. Williams is also known as Williams, V<br>This function should also work the other way around if you switched the inputs Williams, V is also known as V. Williams</p>
+                    <?php
+                        // The Data
+                        $players1 = array('M. Sharapova','N. Djøvick','A. Murray','V. Williams');
+                        $players2 = array('Djovick','Williams, V','Williams, S','S, Williams','Murray','Sharapova');
+                        $quiz1->bestMatch($players1, $players2);
+                    ?>
+                </li>
             </ol>
         </main>
 
