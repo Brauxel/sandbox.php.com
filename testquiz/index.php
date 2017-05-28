@@ -64,6 +64,11 @@
                     </form>
                     <p><?php echo $quiz1->getSum($_POST['numbers'] ?? array(1, 2, 3 )); ?></p>
                 </li>
+
+                <li>
+                    <p>What does "extends" do to the following "Cat" class?<br><br>class Cat extends Animal<br>&nbsp;&nbsp;&nbsp;&nbsp;{<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// Code Goes Here<br>&nbsp;&nbsp;&nbsp;&nbsp;}</p>
+                    <p>The "extends" is used to wield the inheritance capabilities of PHP. Since the 'Cat' class "extends" the 'Animal' class, all the public and protected properties (variables and functions) of 'Animal' are inherited by 'Cat'. The inherited properties retain their original functionality unless overwritten in the 'Cat' class. Private properties can't be passed down from a parent to a child.</p>
+                </li>
             </ol>
         </main>
 
