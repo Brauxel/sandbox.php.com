@@ -34,6 +34,43 @@ class QuizController extends Quiz
 
 		return $this->answers[2];
 	}
+
+	public function loopTests() {
+		echo '1) The for loop:<br><br>';
+
+		for( $i=0; $i<32; $i++ ) {
+			echo 'Iteration '. ($i+1) .'<br>';
+
+			//Let's generate an array to use for the foreach loop as well
+			$iterations[] = $i;
+		}
+
+		echo '<br><br>2) The foreach (using an array created in the for loop) loop:<br><br>';
+
+		foreach( $iterations as $i ) {
+			echo 'Iteration '. ($i+1) .'<br>';
+		}
+
+		echo '<br><br>3) The while loop:<br><br>';
+
+		// Let's re-declare $i to be used as an increment in the while loop
+		$i = 0;
+
+		while( $i<32 ) {
+			$i++;
+			echo 'Iteration '. $i .'<br>';
+		}
+
+		echo '<br><br>4) The do-while loop:<br><br>';
+
+		// Let's re-declare $i to be used as an increment in the while loop
+		$i = 0;
+
+		do {
+			$i++;
+			echo 'Iteration '. $i .'<br>';
+		} while ( $i < 32);
+	}
 }
 
 ?>

@@ -82,6 +82,11 @@
                     </form>
                     <p><?php $sprinkles->purr($_POST['startdelay'] ?? 0, $_POST['delay'] ?? 0, $_POST['purrcount'] ?? 1); ?></p>
                 </li>
+
+                <li>
+                    <p>Provide examples for the different loops in native PHP, write tests in which the code block executes exactly 32 times</p>
+                    <?php $quiz1->loopTests(); ?>
+                </li>
             </ol>
         </main>
 
