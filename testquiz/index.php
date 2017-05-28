@@ -1,8 +1,10 @@
 <!-- require Controllers -->
-<?php require_once 'contollers/QuizController.php'; ?>
+<?php require_once 'controllers/QuizController.php'; ?>
+<?php require_once 'controllers/CatController.php'; ?>
 
 <?php
     $quiz1 = new QuizController;
+    $sprinkles = new CatController;
 
 ?>
 
@@ -68,6 +70,10 @@
                 <li>
                     <p>What does "extends" do to the following "Cat" class?<br><br>class Cat extends Animal<br>&nbsp;&nbsp;&nbsp;&nbsp;{<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// Code Goes Here<br>&nbsp;&nbsp;&nbsp;&nbsp;}</p>
                     <p>The "extends" is used to wield the inheritance capabilities of PHP. Since the 'Cat' class "extends" the 'Animal' class, all the public and protected properties (variables and functions) of 'Animal' are inherited by 'Cat'. The inherited properties retain their original functionality unless overwritten in the 'Cat' class. Private properties can't be passed down from a parent to a child.</p>
+                </li>
+
+                <li>
+                    <p>Create a function called "purr()" in the "Cat" class (above) and Echo 'purr' every x seconds with a specified delay to start purring</p>
                 </li>
             </ol>
         </main>
