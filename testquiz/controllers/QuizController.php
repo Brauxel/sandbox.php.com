@@ -70,17 +70,29 @@ class QuizController extends Quiz
 			$i++;
 			echo 'Iteration '. $i .'<br>';
 		} while ( $i < 32);
+
+		return 'For Loop, Foreach Loop, While Loop and Do While Loop';
 	}
 
 	public function alphaNumericExplode(string $query) {
 		preg_match_all('/\d+/', $query, $numbers);
 		preg_match_all('/[^\d]+/', $query, $words);
 
-		print_r($words);
-		echo '<br>';
-		print_r($numbers);
+		return array_merge($words, $numbers);
+	}
 
-		return;
+	public function containsWithin(string $haystack, string $needle) {
+		$pos = stripos($haystack, $needle);
+		//die(var_dump($pos));
+
+		if($pos >= 0) {
+			$this->answers[] = 'The string was found at poistion '. $pos;
+		} else {
+			$this->answers[] = 'The string was not found';
+		}
+		
+
+		return $this->answers[7];
 	}
 }
 

@@ -69,7 +69,8 @@
 
                 <li>
                     <p>What does "extends" do to the following "Cat" class?<br><br>class Cat extends Animal<br>&nbsp;&nbsp;&nbsp;&nbsp;{<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// Code Goes Here<br>&nbsp;&nbsp;&nbsp;&nbsp;}</p>
-                    <p>The "extends" is used to wield the inheritance capabilities of PHP. Since the 'Cat' class "extends" the 'Animal' class, all the public and protected properties (variables and functions) of 'Animal' are inherited by 'Cat'. The inherited properties retain their original functionality unless overwritten in the 'Cat' class. Private properties can't be passed down from a parent to a child.</p>
+                    <?php $quiz1->answers[] = 'The "extends" is used to wield the inheritance capabilities of PHP. Since the \'Cat\' class "extends" the \'Animal\' class, all the public and protected properties (variables and functions) of \'Animal\' are inherited by \'Cat\'. The inherited properties retain their original functionality unless overwritten in the \'Cat\' class. Private properties can\'t be passed down from a parent to a child.'; ?>
+                    <p><?php echo $quiz1->answers[3]; ?></p>
                 </li>
 
                 <li>
@@ -80,17 +81,40 @@
                         <input type="number" name="purrcount" id="purrcount" value="<?php echo $_POST['purrcount'] ?? 1; ?>" required min="1"><br><br>                        
                         <button type="submit">Run Purr</button>
                     </form>
-                    <p><?php $sprinkles->purr($_POST['startdelay'] ?? 0, $_POST['delay'] ?? 0, $_POST['purrcount'] ?? 1); ?></p>
+                    <p><?php $quiz1->answers[4] = $sprinkles->purr($_POST['startdelay'] ?? 0, $_POST['delay'] ?? 0, $_POST['purrcount'] ?? 1); ?></p>
                 </li>
 
                 <li>
                     <p>Provide examples for the different loops in native PHP, write tests in which the code block executes exactly 32 times</p>
-                    <p><?php $quiz1->loopTests(); ?></p>
+                    <p><?php $quiz1->answers[5] = $quiz1->loopTests(); ?></p>
                 </li>
 
                 <li>
                     <p>Given the following input: 'One day 10 questions: 2 on each day, for 5 weeks.'<br>Write simple logic in PHP code that can extract both the words and numbers and put them into their own arrays, '$words', '$numbers'.</p>
-                    <p><?php $explosive = $quiz1->alphaNumericExplode('One day 10 questions: 2 on each day, for 5 weeks.'); ?></p>
+                    <p><?php $quiz1->answers[6] = $quiz1->alphaNumericExplode('One day 10 questions: 2 on each day, for 5 weeks.'); ?></p>
+                    <p>
+                        <?php
+                            foreach( $quiz1->answers[6] as $explosive ) {
+                                print_r($explosive);
+                                echo "<br>";
+                            }
+                        ?>
+                    </p>
+                </li>
+
+                <li>
+                    <p>Write a function that tests for a certain substring and returns a boolean to indicate whether or not the substring is present.<br>The search should be case-insensitive and match accented characters to the english equivalent.<br><br>// Example<br>$needle = 'search';<br>$haystack = 'Some text goes in here with a lot of wørds to $search through. We\'ll add more words if we want.';<br>$wasFound = containsWithin($haystack, $needle);<br>Be sure to try 'some', 'search', 'well', 'words', and 'word'</p>
+                    <form action="" method="post">
+                        <input type="text" name="haystack" id="haystack" value="<?php echo $_POST['haystack'] ?? 'Some text goes in here with a lot of wørds to search through. We\'ll add more words if we want.'; ?>"><br><br>
+                        <input type="text" name="needle" id="needle" value="<?php echo $_POST['needle'] ?? 'search'; ?>"><br><br>                        
+                        <button type="submit">Check</button>
+                    </form>
+                    <p>
+                        <?php
+                            $wasFound = $quiz1->containsWithin($_POST['haystack'] ?? 'Some text goes in here with a lot of wørds to search through. We\'ll add more words if we want.', $_POST['needle'] ?? 'search' ); 
+                            echo $wasFound;
+                        ?>
+                    </p>
                 </li>
             </ol>
         </main>

@@ -35,6 +35,8 @@ class CatController extends Cat
 		} else {
 			echo 'Press "Run Purr" to run the function';
 		}
+
+		return 'Function Executed!';
 	}
 }
 ?>
