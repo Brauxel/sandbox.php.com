@@ -28,6 +28,12 @@ class QuizController extends Quiz
 
 		return $this->answers[1];
 	}
+
+	public function getSum(array $numbers) {
+		$this->answers[] = 'The sum of all the given values is ' . array_sum($numbers);
+
+		return $this->answers[2];
+	}
 }
 
 ?>

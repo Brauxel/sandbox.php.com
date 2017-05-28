@@ -39,7 +39,7 @@
                 <li>
                     <p>Write a function that determines if a string starts with an upper-case letter A-Z</p>
                     <form action="" method="post">
-                        <input type="text" name="teststr" id="teststr" placeholder="<?php echo $_POST['teststr'] ?? 'Lorem Ipsum'; ?>"><br><br>
+                        <input type="text" name="teststr" id="teststr" value="<?php echo $_POST['teststr'] ?? 'Lorem Ipsum'; ?>"><br><br>
                         <button type="submit">Check</button>
                     </form>
                     <p><?php echo $quiz1->checkFirstCase($_POST['teststr'] ?? 'Lorem Ipsum'); ?></p>
@@ -48,10 +48,21 @@
                 <li>
                     <p>Write a function that determines the area of a circle given the radius.</p>
                     <form action="" method="post">
-                        <input type="number" name="radius" id="radius" placeholder="<?php echo $_POST['radius'] ?? 0; ?>" step="any" min="0"><br><br>
+                        <input type="number" name="radius" id="radius" value="<?php echo $_POST['radius'] ?? 0; ?>" step="any" min="0"><br><br>
                         <button type="submit">Get Area</button>
                     </form>
                     <p><?php echo $quiz1->getArea($_POST['radius'] ?? 0); ?></p>
+                </li>
+
+                <li>
+                    <p>Write a function that can sum all of the values in any given array.</p>
+                    <form action="" method="post">
+                        <input type="number" name="numbers[]" id="radius" value="<?php echo ( empty($_POST['numbers'][0]) ? 1: $_POST['numbers'][0] ); ?>" step="any"><br><br>
+                        <input type="number" name="numbers[]" id="radius" value="<?php echo ( empty($_POST['numbers'][1]) ? 2: $_POST['numbers'][1] ); ?>" step="any"><br><br>
+                        <input type="number" name="numbers[]" id="radius" value="<?php echo ( empty($_POST['numbers'][2]) ? 3: $_POST['numbers'][2] ); ?>" step="any"><br><br>
+                        <button type="submit">Get Sum</button>
+                    </form>
+                    <p><?php echo $quiz1->getSum($_POST['numbers'] ?? array(1, 2, 3 )); ?></p>
                 </li>
             </ol>
         </main>
