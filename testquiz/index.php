@@ -39,13 +39,21 @@
                 <li>
                     <p>Write a function that determines if a string starts with an upper-case letter A-Z</p>
                     <form action="" method="post">
-                        <input type="text" name="entry1" id="entry1" placeholder="<?php echo $_POST['entry1'] ?? 'Lorem Ipsum'; ?>"><br><br>
+                        <input type="text" name="teststr" id="teststr" placeholder="<?php echo $_POST['teststr'] ?? 'Lorem Ipsum'; ?>"><br><br>
                         <button type="submit">Check</button>
                     </form>
-                    <p><?php echo $quiz1->query1($_POST['entry1'] ?? 'Lorem Ipsum'); ?></p>
+                    <p><?php echo $quiz1->checkFirstCase($_POST['teststr'] ?? 'Lorem Ipsum'); ?></p>
+                </li>
+
+                <li>
+                    <p>Write a function that determines the area of a circle given the radius.</p>
+                    <form action="" method="post">
+                        <input type="number" name="radius" id="radius" placeholder="<?php echo $_POST['radius'] ?? 0; ?>" step="any" min="0"><br><br>
+                        <button type="submit">Get Area</button>
+                    </form>
+                    <p><?php echo $quiz1->getArea($_POST['radius'] ?? 0); ?></p>
                 </li>
             </ol>
-            <p></p>
         </main>
 
         <script src="http://code.jquery.com/jquery-1.12.4.min.js"></script>
